@@ -1,8 +1,8 @@
 from appium import webdriver
 import sys,getopt
 def main(argv):
-    deviceName = 'leidian'
-    #h为帮助,n代表设备名称
+    name = 'leidian'
+    #h为帮助,n代表设备名称,n:表示n后面有参数
     try:
         opts,args = getopt.getopt(argv,"hn:",["deviceName="])
     except getopt.GetoptError:
@@ -13,8 +13,9 @@ def main(argv):
             print('帮助信息： -n<deviceName>')
             sys.exit()
         elif opt in ('-n','--deviceName'):
-            deviceName = arg
-    print('手机名称为：',deviceName)
+            name = arg
+    print('手机名称为：',name)
+    return name
 
 
 

@@ -1,17 +1,10 @@
 #encoding='UTF-8'
-from appium import webdriver
-from ..common.fengzhuangdingwei import Base
+from zhixingapp.common.start import start_app
+from zhixingapp.common.fengzhuangdingwei import Base
 import unittest
-from time import sleep
-des = {
-        "platformName":"Android",#手机是android还是ios
-        "deviceName":"emulator-5554",#手机名称，通过adb devices获得
-        "platformVersion":"7.1.2",#android版本号
-        "appPackage":"com.yipiao",#app包名
-        "appActivity":"com.zt.main.entrance.ZTLaunchActivity",#apk第一个启动页
-        "noReset":True#不重置手机app
-    }
 
+
+# device = start_app()#从命令行传入，不要写参数
 
 class TestYaoQing(unittest.TestCase):
     s1={'by': 'text', 'value': '我的'}
@@ -20,7 +13,7 @@ class TestYaoQing(unittest.TestCase):
     s4 = {"by":"class","value":"android.view.View"}
     @classmethod
     def setUpClass(cls):
-        cls.driver = webdriver.Remote("http://127.0.0.1:4723/wd/hub", des)
+        cls.driver = start_app()#从命令行传入，不要写参数
         cls.driver.wait_activity("com.yipiao/com.zt.main.entrance.MainActivity", 20)
         cls.base = Base(cls.driver)
         # 判断更新弹框中“下次再说”是否存在,如果弹框存在，先点下次再说，如果不存在，直接点我的
@@ -54,6 +47,3 @@ class TestYaoQing(unittest.TestCase):
         self.assertTrue(resultR==exceptresult)
     if __name__=="__main__":
         unittest.main()
-
-
-

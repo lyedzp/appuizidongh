@@ -1,7 +1,6 @@
 import time
 from HTMLTestRunner import HTMLTestRunner
 from unittest import defaultTestLoader
-
 # 指定测试用例为当前文件夹下的interface目录
 test_dir = './case'
 testsuit = defaultTestLoader.discover(test_dir,pattern='test*')
