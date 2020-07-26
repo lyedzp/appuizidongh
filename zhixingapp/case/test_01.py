@@ -1,9 +1,10 @@
-from ..common.start import start_app
-from ..common.fengzhuangdingwei import Base
+import sys
+sys.path.extend(['D:\\appuizidongh'])#加入这2行是因为在命令行运行直接运行test_01时会找不到zhixingapp这个模块，把路径加上，命令行运行时就可以了
+from zhixingapp.common.start import start_app
+from zhixingapp.common.fengzhuangdingwei import Base
 import unittest
-
-
-
+import warnings
+from selenium import webdriver
 
 class TestYaoQing(unittest.TestCase):
     s1={'by': 'text', 'value': '我的'}
@@ -12,7 +13,8 @@ class TestYaoQing(unittest.TestCase):
     s4 = {"by":"class","value":"android.view.View"}
     @classmethod
     def setUpClass(cls):
-        cls.driver = start_app()#从命令行传入，不要写参数
+        warnings.simplefilter('ignore', ResourceWarning)
+        cls.driver = start_app()
         cls.driver.wait_activity("com.yipiao/com.zt.main.entrance.MainActivity", 20)
         cls.base = Base(cls.driver)
         # 判断更新弹框中“下次再说”是否存在,如果弹框存在，先点下次再说，如果不存在，直接点我的
@@ -33,7 +35,6 @@ class TestYaoQing(unittest.TestCase):
             result.append(r)
         return result
 
-
     def test_01(self):
         """我的足迹页面-分享"""
         self.base.click(self.s1)
@@ -44,5 +45,5 @@ class TestYaoQing(unittest.TestCase):
             #期望值
         exceptresult = ["微信好友","朋友圈"]
         self.assertTrue(resultR==exceptresult)
-    if __name__=="__main__":
-        unittest.main()
+if __name__=="__main__":
+    unittest.main()

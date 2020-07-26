@@ -2,6 +2,25 @@
 import time
 from HTMLTestRunner import HTMLTestRunner
 from unittest import defaultTestLoader
+import sys,getopt
+
+def main(argv):
+    name = 'leidian'
+    #h为帮助,n代表设备名称,n:表示n后面有参数
+    try:
+        opts,args = getopt.getopt(argv,"hn:",["deviceName="])
+    except getopt.GetoptError:
+        print('帮助信息： -n<deviceName>')
+        sys.exit(2)
+    for opt,arg in opts:
+        if opt == '-h':
+            print('帮助信息： -n<deviceName>')
+            sys.exit()
+        elif opt in ('-n','--deviceName'):
+            name = arg
+    print('手机名称为：',name)
+    return name
+
 # 指定测试用例为当前文件夹下的interface目录
 test_dir = './case'
 testsuit = defaultTestLoader.discover(test_dir,pattern='test*')

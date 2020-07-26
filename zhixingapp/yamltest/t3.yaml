@@ -1,0 +1,12 @@
+#list中嵌套字典1
+- type:
+    name: name1
+    sex: sex2
+- price:
+    oldprice: cheap1
+    newprice: cheap2
+
+#list中嵌套字典2
+- type: labn
+  name: name1
+- price: cheap1

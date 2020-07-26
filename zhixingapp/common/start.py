@@ -1,21 +1,7 @@
 from appium import webdriver
-import sys,getopt
-def main(argv):
-    name = 'leidian'
-    #h为帮助,n代表设备名称,n:表示n后面有参数
-    try:
-        opts,args = getopt.getopt(argv,"hn:",["deviceName="])
-    except getopt.GetoptError:
-        print('帮助信息： -n<deviceName>')
-        sys.exit(2)
-    for opt,arg in opts:
-        if opt == '-h':
-            print('帮助信息： -n<deviceName>')
-            sys.exit()
-        elif opt in ('-n','--deviceName'):
-            name = arg
-    print('手机名称为：',name)
-    return name
+from zhixingapp.run_all import main
+import sys
+
 
 
 
@@ -54,5 +40,3 @@ def start_app(n=None):
     driver = webdriver.Remote("http://127.0.0.1:4723/wd/hub", des)
     return driver
 
-if __name__=="__main__":
-    start_app()

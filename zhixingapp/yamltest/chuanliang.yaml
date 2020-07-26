@@ -1,0 +1,5 @@
+a: true
+b: false
+c: ~
+d: 12345
+e: !!str 12345
