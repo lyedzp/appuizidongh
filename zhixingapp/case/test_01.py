@@ -1,10 +1,9 @@
-#encoding='UTF-8'
-from zhixingapp.common.start import start_app
-from zhixingapp.common.fengzhuangdingwei import Base
+from ..common.start import start_app
+from ..common.fengzhuangdingwei import Base
 import unittest
 
 
-# device = start_app()#从命令行传入，不要写参数
+
 
 class TestYaoQing(unittest.TestCase):
     s1={'by': 'text', 'value': '我的'}

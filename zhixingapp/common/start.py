@@ -53,5 +53,6 @@ def start_app(n=None):
         des = des_leidian
     driver = webdriver.Remote("http://127.0.0.1:4723/wd/hub", des)
     return driver
+
 if __name__=="__main__":
-    driver = start_app()
+    start_app()

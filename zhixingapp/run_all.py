@@ -1,3 +1,4 @@
+#coding=utf-8
 import time
 from HTMLTestRunner import HTMLTestRunner
 from unittest import defaultTestLoader
