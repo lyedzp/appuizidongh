@@ -1,0 +1,45 @@
+MyPage:
+ desc: 页面元素抓取
+ locators:
+  -
+    by: text
+    value : 我的
+  -
+    by: text
+    value: 优惠券
+  -
+    by: text
+    value: 加速包/抢票券
+  -
+    by: text
+    value: 借现金
+  -
+    by: text
+    value: 拿去花
+  -
+    by: text
+    value: 常用信息
+  -
+    by: text
+    value: 客服中心
+  -
+    by: text
+    value: 产品意见
+  -
+    by: text
+    value: 出行服务
+  -
+    by: text
+    value: 学生认证
+  -
+    by: text
+    value: 我的足迹
+  -
+    by: text
+    value: 关注微信公众号
+  -
+    by: text
+    value: 实名认证
+
+
+
