@@ -2,7 +2,7 @@
 import time
 from HTMLTestRunner import HTMLTestRunner
 from unittest import defaultTestLoader
-import sys,getopt
+import sys,getopt,os
 
 def main(argv):
     name = 'leidian'
@@ -22,7 +22,7 @@ def main(argv):
     return name
 
 # 指定测试用例为当前文件夹下的interface目录
-test_dir = './case'
+test_dir = os.getcwd()
 testsuit = defaultTestLoader.discover(test_dir,pattern='test*')
 if __name__=='__main__':
     now = time.strftime("%Y-%m-%d %H_%M_%S")

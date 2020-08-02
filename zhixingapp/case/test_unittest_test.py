@@ -1,4 +1,6 @@
 #encoding='UTF-8'
+import sys
+sys.path.extend(['D:\\appuizidongh\\zhixingapp'])
 from appium import webdriver
 from zhixingapp.common.fengzhuangdingwei import Base
 import unittest

@@ -1,5 +1,5 @@
 import sys
-sys.path.extend(['D:\\appuizidongh'])#加入这2行是因为在命令行运行直接运行test_01时会找不到zhixingapp这个模块，把路径加上，命令行运行时就可以了
+sys.path.extend(['D:\\appuizidongh\\zhixingapp'])#加入这2行是因为在命令行运行直接运行test_01时会找不到zhixingapp这个模块，把路径加上，命令行运行时就可以了
 from zhixingapp.common.start import start_app
 from zhixingapp.common.fengzhuangdingwei import Base
 import unittest
