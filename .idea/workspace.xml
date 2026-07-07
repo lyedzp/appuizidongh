@@ -159,11 +159,19 @@
       <pane id="Scope" />
     </panes>
   </component>
+<<<<<<< HEAD
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;git-widget-placeholder&quot;: &quot;master&quot;
   }
 }</component>
+=======
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "git-widget-placeholder": "master"
+  }
+}]]></component>
+>>>>>>> master
   <component name="RunManager">
     <configuration name="cmdcanshu" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="appuizidongh" />
